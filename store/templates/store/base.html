@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="LegalAccessories">
+    <meta name="author" content="Safiullah Khan">
+
+    <!-- Styling -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'store/css/main.css' %}">
+
+    <!-- Fonts -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Page Title Tag -->
+
+    <link rel="shortcut icon" type="image/png" href="{% static 'store/images/logo/logo.png' %}">
+    <title>Legal Accessories Home</title>
+
+    <style type="text/css">
+    	.home-topbar img {
+    		width: 40px;
+    	}
+        .no-border {
+            border: none;
+            border-bottom: 1px solid #555555;
+            background-color: transparent !important;
+            padding: 3px;
+            font-size: 13px;
+        }
+        .no-border:focus {
+            border: none !important;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container pt-3">
+        <div class="home-discbar pt-2 text-secondary">
+            <div class="row text-uppercase text-secondary">
+                <div class="col-6">
+                    <h6 class="pl-5">Nigeria, Abuja</h6>
+                </div>
+                <div class="col-6">
+                    <h6 class="float-right pr-5">
+                        +234xxxxxxxxxxxx
+                    </h6>
+                </div>
+            </div>
+        </div>
+        <div class="logo-bar">
+            <div class="row">
+                <div class="col-lg-4 col-sm-12 font-weight-bold pt-2">
+                    <h5 class="text-uppercase">Welcome to Legal Accessories Warehouse</h5>
+                </div>
+                <div class="col-lg-4 col-sm-12 text-center">
+                    <a href="{% url 'home' %}">
+                        <img src="{% static 'store/images/logo.jpg' %}" width="70%" class="mt-3 mb-3">
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-12">
+                    <div class="font-weight-bold float-right top-cart mt-2">
+                        <a href="{% url 'cart' %}">
+                            <!-- <img src="{% static 'store/images/logo/cart.webp' %}" width="10%"> -->
+                            <small class="cart-items badge">Bag ({{ request.session.total_products }})</small>
+                            <i class="fa fa-shopping-cart fa-2x mt-3" aria-hidden="true"></i>
+                        </a>
+                        <form method="POST" class="mt-3">
+                            {% csrf_token %}
+                            <fieldset>
+                                <p>
+                                    <span class="fa fa-search"></span>
+                                    <input class="no-border" type="text" placeholder="Search. ." />
+                                </p>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="my_navbar mt-2 mb-2">
+            <ul class="nav nav-pills nav-fill">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'accessories' %}">Accessories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'courtwear' %}">Courtwear</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'ceremonials' %}">Ceremonial</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'men' %}">Men's Wear</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'women' %}">Women's Wear</a>
+                </li>
+            </ul>
+        </div>
+
+
+        {% block content %}
+        {% endblock %}
+
+        <footer class="home-footer pt-5"> 
+            <hr class="border">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12 pt-3">
+                    <div class="text-uppercase float-left">
+                        <h6 class="pb-2">About Us</h6>
+                        <ul>
+                            <li><a href="{% url 'about' %}">About Us</a></li>
+                            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 pt-3">
+                    <div class="text-uppercase float-left">
+                        <h6 class="pb-2">Our Services</h6>
+                        <ul>
+                            <li><a href="{% url 'accessories' %}">Accessories</a></li>
+                            <li><a href="{% url 'courtwear' %}">Courtwear</a></li>
+                            <li><a href="{% url 'ceremonials' %}">Ceremonials</a></li>
+                            <li><a href="{% url 'men' %}">Men's Wear</a></li>
+                            <li><a href="{% url 'women' %}">Woman's Wear</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 pt-3">
+                    <div class="text-uppercase float-left">
+                        <h6 class="pb-2">Corporate</h6>
+                        <ul>
+                            <li><a href="#">Terms and Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Responsibility</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="float-left">
+                        <p class="copyright pt-1 mt-3">Copyright &copy Legal Accessories Warehouse
+                            <br>Nigeria
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>

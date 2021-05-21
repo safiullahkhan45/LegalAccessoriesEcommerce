@@ -1,0 +1,75 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="cart">
+    <h4 class="font-weight-bold text-center">YOUR CART</h4>
+    {% if empty %}
+    <div class="card cart-card mt-2 mb-3">
+        <div class="card-body">
+            <div class="">
+                <a href="{% url 'home' %}">
+                    <button class="link-btn-cart btn btn-sm">Continue Shopping &#8676;</button>
+                </a>
+            </div>
+            <hr>
+            <h1 class="textcen">Your cart is empty please continue shopping.</h1>
+        </div>
+    </div>
+    {% else %}
+    <div class="card cart-card mt-2">
+        <div class="card-body">
+            <div class="">
+                <a href="{% url 'home' %}">
+                    <button class="link-btn-cart btn btn-sm">Continue Shopping &#8676;</button>
+                </a>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-3">Items:<strong>{{ cart.total_products }}</strong></div>
+                <div class="col-3">Total:<strong>{{ cart.total_amount }}</strong></div>
+                <div class="col-6">
+                    <a href="{% url 'checkout' %}"><button class="btn btn-sm btn-success float-right">Checkout</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card cart-card mt-3 mb-3">
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Sr. #</th>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Size</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Choice</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in cart.cartitem_set.all %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td><img class="cart-image" src="{{ item.product.image.url }}"></td>
+                        <td>{{ item.product.price }}</td>
+                        <td>{{ item.size }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.total_cost }}</td>
+                        <td>
+                            <a href="{% url 'delete_cart_item' item.id %}">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}

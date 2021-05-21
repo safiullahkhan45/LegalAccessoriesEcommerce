@@ -1,0 +1,83 @@
+{% extends 'store/home.html' %}
+{% load static %}
+{% block home %}
+
+	<div class="container mt-5">
+		<h2 class="text-center">Request a quote Today</h2>
+		<div class="row">
+			<div class="col-lg-8 col-sm-12">
+				<p style="font-size: 16px">
+					<form class="" method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="name" placeholder="Full Name">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="contact" placeholder="Contact Number">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="email" placeholder="Email Address">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="subject" placeholder="Purpose of Contact">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-sm-12">
+                                <div class="form-group">
+                                    <textarea rows="6" name="message" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                	<button>Send Mail</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+				</p>
+			</div>
+			<div class="col-lg-4 col-sm-12 border-left">
+				<div class="row">
+					<div class="col-12">
+						<h3>Reach Us</h3>
+					</div>
+					<div class="col-12">
+						<h5>Location :</h5>
+						<p>
+							Suite 102 Better Living Complex beside Civil Defence Hq, Algiers Street Wuse Zone 5 Abuja<br><br>
+
+							and<br><br>
+
+							Suite 440, Ikeja Plaza 81 Mobolaji Bank, Anthony way, Ikeja Lagos<br><br>
+						</p>
+					</div>
+					<div class="col-12">
+						<h5>Email :</h5>
+						<p>
+							sales@legalaccessorieswarehouse.com<br><br>
+
+							legalaccwarehouse@yahoo.co.uk
+						</p>
+					</div>
+					<div class="col-12">
+						<h5>Phone Number :</h5>
+						<p>
+							08033800330<br>
+
+							08171000181
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

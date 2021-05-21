@@ -1,0 +1,25 @@
+{% extends 'store/base.html' %}
+{% load static %}
+{% block content %}
+
+	<div class="accessories">
+		<h4 class="font-weight-bold text-center">Men's Wear</h4>
+		<div class="row">
+			<div class="col-12">
+				<div class="row">
+					{% for object in obj %}
+						<div class="col-lg-3 col-sm-6 mb-3">
+							<img src="{{ object.image.url }}" width="100%">
+							<h6 class="text-uppercase font-weight-bold mt-3">{{ object.title }}</h6>
+							<p>Price: ${{ object.price }}</p>
+							<a href="{% url 'product_details' object.id %}" class="btn btn-sm">
+								View
+							</a>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

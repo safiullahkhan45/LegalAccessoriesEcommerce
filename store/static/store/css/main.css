@@ -1,0 +1,176 @@
+body {
+    font-family: serif;
+}
+
+button, .btn {
+    background-color: #f38222 !important;
+    color: white !important;
+    border: none !important;
+}
+
+button:hover {
+    background-color: #b02124 !important;
+}
+
+.btn:hover {
+    background-color: #b02124 !important;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #f38222;
+}
+
+.logo-bar h5 {
+    font-size: 15px;
+}
+
+.home-discbar {
+    background-color: #f4f5f6;
+    margin-bottom: 10px;
+}
+
+.home-discbar h6 {
+    font-weight: 1000 !important;
+    font-size: 12px !important;
+}
+
+.top-cart a,
+.logo-bar {
+    color: #6c757d !important;
+}
+
+.cart-items {
+    font-size: 15px;
+}
+
+.card-header {
+    /*height: 300px !important;*/
+}
+
+.store-img img {
+    /*width: 207px;*/
+    height: 350px;
+}
+
+.home-about {
+    background-color: #b02124;
+}
+
+.home-links img {
+    width: 350px;
+    height: 200px;
+}
+
+.home_page h6 {
+    margin-bottom: 0px;
+}
+
+/* Footer Styling */
+
+.home-footer ul {
+    padding-left: 0px;
+    font-size: 13px;
+}
+
+p {
+    font-size: 13px;
+}
+
+.home-footer ul li {
+    list-style-type: none;
+}
+
+.footer-logo img {
+    width: 60%;
+}
+
+/* Cart Styling */
+
+.link-btn-cart {
+    margin: 0 auto;
+    padding: 10px 20px;
+    /*max-width: 200px;*/
+    background: #fff; /* fallback color for old browsers */background: rgba(255, 255, 255, 0.5);
+    color: black;
+    border: 1px solid black;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.cart-image {
+    width: 25px;
+}
+
+.cart-card,
+.checkout-card {
+    /*border: 2px solid black;*/
+    box-shadow: 1px 1px 10px;
+}
+
+/* Checkout Styling */
+.link-btn-checkout {
+    /*margin: 0 auto;*/
+    /*padding: 0px 5px;*/
+    /*max-width: 200px;*/
+    background: #fff; /* fallback color for old browsers */background: rgba(255, 255, 255, 0.5);
+    color: black;
+    border: 1px solid black;
+    text-align: center;
+    text-decoration: none;
+    /*letter-spacing: 1px;*/
+}
+
+/* Men Store Styling */
+
+.men-shop .cart-buttons {
+    margin-top: -20px;
+}
+
+/* Store Styles */
+
+.accessories h4,
+.courtwear h4,
+.ceremonials h4,
+.cart h4,
+.checkout h4 {
+    padding: 20px 0px;
+    /*border-top: 0.8px solid black;*/
+    border-bottom: 0.8px solid black;
+}
+
+.accessories img,
+.courtwear img,
+.ceremonials img {
+    height: 320px;
+}
+
+.my_navbar {
+    border-bottom: 0.8px solid black;
+}
+
+@media (max-width: 767px) {
+    .home-footer {
+        align-content: center;
+    }
+}
+
+.product_details .form-control-sm {
+    background-color: #f38222;
+    border: none;
+    color: white;
+}
+
+.product_details .other_image:hover {
+    transform: scale(3);
+    z-index: 2;
+    position: absolute;
+}
+
+
