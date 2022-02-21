@@ -19,7 +19,7 @@
             </div>
             <div class="col-lg-4 col-sm-12" style="z-index:1;">
                 <h5 class="pb-2 font-weight-bold">{{ obj.title|upper }}</h5>
-				<h5 class="pb-2">$ {{ obj.price }}</h5>
+				<h5 class="pb-2">₦ {{ obj.price }}</h5>
                 
                 <form method="GET" action="{% url 'addtocart' obj.id %}" class="form-inline">
                     {% if obj.size.exists %}
